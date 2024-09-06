@@ -7,7 +7,7 @@ const symbolbox=document.querySelector("#symbols");
 const copybutton=document.querySelector("#Cbutton");
 const indicator=document.querySelector("#indicator");
 const generatebutton=document.querySelector("#Gbutton");
-const copytext=document.querySelector("#copyytext");
+const copytext=document.querySelector("#copytext");
 const slidertext=document.querySelector("#slidertext");
 const checkboxall=document.querySelectorAll("input[type=checkbox]"); //so that i can add event listner to it easily to all the checkboxes
 
@@ -31,8 +31,9 @@ sliderelement.addEventListener('input',(e)=>{
     handleslider();
 });
 
-function setIndicator(color){
-    indicator.style.backgroundcolor=color;
+function setIndicator(color) {
+    indicator.style.backgroundColor = color;
+    //shadow - HW
 }
 
 function getRandInt(min,max){
@@ -76,7 +77,6 @@ function calculateStrength(){
     if(symbolbox.checked){
         symbolinclude=true;
     }
-    var color;
     if(lowerinclude && upperinclude && numberinclude && symbolinclude && passwordLength>=5)
     {
         console.log("password is strong");
@@ -89,7 +89,7 @@ function calculateStrength(){
     }
     else{
         console.log("password is weak");
-        setIndicator("#f00");
+        setIndicator("red");
     }
     
 
